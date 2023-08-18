@@ -27780,8 +27780,336 @@ video {
   color: pink;
 }
 
-.mixin {
-  color: pink;
+@media only screen and (max-width: 1440px) {
+  /* 背景霧化 */
+  .AHC-Background-Blur {
+    width: calc(100% - 190px);
+  }
+  /* 結果彈跳視窗 */
+  .AHC-Result-Window {
+    width: calc(100% - 190px);
+  }
+}
+@media only screen and (min-width: 1441px) {
+  /* 背景霧化 */
+  .AHC-Background-Blur {
+    width: calc(100% - 220px);
+  }
+  /* 結果彈跳視窗 */
+  .AHC-Result-Window {
+    width: calc(100% - 220px);
+  }
+}
+.ui-datepicker select.ui-datepicker-month,
+.ui-datepicker select.ui-datepicker-year {
+  color: black !important;
+}
+
+/* 背景霧化 */
+.AHC-Background-Blur {
+  display: none;
+  z-index: 500;
+  height: 100%;
+  position: fixed;
+  right: 0;
+  top: 0;
+  background-color: #ced4da;
+  opacity: 0.5;
+}
+
+.AHC-Background-Blur-On {
+  z-index: 502;
+  display: block;
+}
+
+/* 結果彈跳視窗 */
+.AHC-Result-Window {
+  display: none;
+  z-index: 503;
+  height: 100%;
+  position: fixed;
+  right: 0;
+  top: 0;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.AHC-Result-Window div.AHC-Result-Open {
+  width: 500px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.AHC-Result-Window div.AHC-Result-Open > div:nth-child(1) {
+  width: 100%;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.AHC-Result-Window div.AHC-Result-Open > div:nth-child(1) > div:nth-child(1) {
+  width: 100%;
+  max-height: calc(100vh - 100px);
+  position: relative;
+  border: 1px solid #008000;
+  background-color: white;
+  border-radius: 10px;
+  -webkit-box-shadow: 0px 0px 5px 1px #adb5bd;
+  box-shadow: 0px 0px 5px 1px #adb5bd;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.AHC-Result-Window div.AHC-Result-Open > div:nth-child(1) > div:nth-child(1).Error-Result {
+  border: 1px solid #c1121f;
+}
+
+.AHC-Result-Window-On {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.AHC-Result-Window-On div.AHC-Result-Open > div:nth-child(1) > div:nth-child(1) {
+  opacity: 0;
+  -webkit-animation-name: AHC-Result-Window-On-Animation;
+  animation-name: AHC-Result-Window-On-Animation;
+  -webkit-animation-delay: 0.8s;
+  animation-delay: 0.8s;
+  -webkit-animation-duration: 0.5s;
+  animation-duration: 0.5s;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes AHC-Result-Window-On-Animation {
+  to {
+    opacity: 1;
+  }
+}
+@keyframes AHC-Result-Window-On-Animation {
+  to {
+    opacity: 1;
+  }
+}
+.AHC-Result-Window-On div.AHC-Result-Open > div:nth-child(1) > div:nth-child(2) {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-animation-name: AHC-Result-Cover-Window-Animation;
+  animation-name: AHC-Result-Cover-Window-Animation;
+  -webkit-animation-delay: 0.8s;
+  animation-delay: 0.8s;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes AHC-Result-Cover-Window-Animation {
+  to {
+    z-index: -1;
+  }
+}
+@keyframes AHC-Result-Cover-Window-Animation {
+  to {
+    z-index: -1;
+  }
+}
+.AHC-Result-Window-On div.AHC-Result-Open > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  background-color: white;
+  border-radius: 10px;
+  -webkit-animation-name: AHC-Result-Cover-On-Window-Animation;
+  animation-name: AHC-Result-Cover-On-Window-Animation;
+  -webkit-animation-duration: 0.8s;
+  animation-duration: 0.8s;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes AHC-Result-Cover-On-Window-Animation {
+  0% {
+    height: 0;
+  }
+  50% {
+    height: calc(100% + 40px);
+  }
+  100% {
+    height: 100%;
+  }
+}
+@keyframes AHC-Result-Cover-On-Window-Animation {
+  0% {
+    height: 0;
+  }
+  50% {
+    height: calc(100% + 40px);
+  }
+  100% {
+    height: 100%;
+  }
+}
+/* 結果彈跳視窗圖示 */
+.AHC-Result-Img {
+  width: 100%;
+  height: 100px;
+  position: absolute;
+  left: 0;
+  top: -50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.AHC-Result-Img > div:nth-child(1) {
+  width: 100px;
+  height: 100px;
+  background-color: #ebffeb;
+  border: 2px solid #008000;
+  border-radius: 50%;
+  -webkit-box-shadow: 0px 0px 5px 1px #adb5bd;
+  box-shadow: 0px 0px 5px 1px #adb5bd;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.AHC-Result-Error-Img > div:nth-child(1) {
+  background-color: #fdeced;
+  border: 2px solid #c1121f;
+}
+
+.AHC-Result-Img > div:nth-child(1) img {
+  width: 50px;
+  height: 50px;
+  background-repeat: no-repeat;
+}
+
+/* 結果彈跳視窗標題 */
+.AHC-Result-Title {
+  padding-top: 90px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.AHC-Result-Title span {
+  color: #495057;
+  font-size: 30pt;
+}
+
+/* 結果彈跳視窗內容 */
+.AHC-Result-Content {
+  padding-top: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.AHC-Result-Content span {
+  color: #008000;
+  font-size: 18pt;
+}
+
+.AHC-Result-Error-Content span {
+  color: #c1121f;
+}
+
+/* 結果彈跳視窗按鈕 */
+.AHC-Result-Button {
+  width: 90%;
+  background-color: #008000;
+  margin-top: 70px;
+  margin-bottom: 20px;
+  padding: 10px 0 10px 0;
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 0px 5px 1px #adb5bd;
+  box-shadow: 0px 0px 5px 1px #adb5bd;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.AHC-Result-Error-Button {
+  background-color: #c1121f;
+}
+
+.AHC-Result-Button:hover {
+  cursor: pointer;
+  -webkit-animation-name: AHC-Result-Button-Animation;
+  animation-name: AHC-Result-Button-Animation;
+  -webkit-animation-duration: 0.3s;
+  animation-duration: 0.3s;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes AHC-Result-Button-Animation {
+  to {
+    opacity: 0.8;
+  }
+}
+@keyframes AHC-Result-Button-Animation {
+  to {
+    opacity: 0.8;
+  }
+}
+.AHC-Result-Button span {
+  color: #f8f9fa;
+  font-size: 14pt;
 }
 
 .menu-selected {

@@ -6,513 +6,51 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>職員出勤管理</title>
+
+    <!-- 所有 CSS 都統整在 SCSS -->
     <link rel="stylesheet" href="css/all.css">
+
+    <!-- 所有 JS 都統整在 NewJR_Functional.js -->
     <script src="./js/ForNewJR_Functional/NewJR_Functional.js"></script>
+
+    <!-- Font Awesome -->
     <link
     rel="stylesheet"
     href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
-  />
+    />
+
+    <!-- bootstrap-icons -->
+    <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+    />
+
+    <!-- sheetjs -->
+    <script src="https://cdn.sheetjs.com/xlsx-latest/package/dist/xlsx.full.min.js"></script>
+
+    <!-- 彈窗 JS -->
+    <script src="./js/Popup .js"></script>
+
 </head>
 <body>
     <form method="post" action="./Student_LifeContact.aspx" id="aspnetForm">
         <div class="page-container">
           <div class="left-content">
             <div class="mother-grid-inner">
-              <!--登入者個人資料 Start-->
+              <!--登入者個人資料-->
                 <script src="./js/header-main.js"></script>
-              <!--登入者個人資料 End-->
-  
-              <link
-                href="../cbm-css/jr-color.css?v20230601"
-                rel="stylesheet"
-                type="text/css"
-                media="all"
-              />
-              <link
-                href="../cbm-css/lay-out-plug-in.css?v20230601"
-                rel="stylesheet"
-                type="text/css"
-                media="all"
-              />
-              <link
-                href="../cbm-css/contact-book-management.css?v20230601"
-                rel="stylesheet"
-                type="text/css"
-                media="all"
-              />
-              <link
-                href="../cbm-css/life-profile.css?v20230601"
-                rel="stylesheet"
-                type="text/css"
-                media="all"
-              />
-              <link
-                rel="stylesheet"
-                href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
-              />
-              <script src="https://cdn.sheetjs.com/xlsx-latest/package/dist/xlsx.full.min.js"></script>
-              <style>
-                @media only screen and (max-width: 1440px) {
-                  /* 背景霧化 */
-                  .AHC-Background-Blur {
-                    width: calc(100% - 190px);
-                  }
-  
-                  /* 結果彈跳視窗 */
-                  .AHC-Result-Window {
-                    width: calc(100% - 190px);
-                  }
-                }
-  
-                @media only screen and (min-width: 1441px) {
-                  /* 背景霧化 */
-                  .AHC-Background-Blur {
-                    width: calc(100% - 220px);
-                  }
-  
-                  /* 結果彈跳視窗 */
-                  .AHC-Result-Window {
-                    width: calc(100% - 220px);
-                  }
-                }
-  
-                .ui-datepicker select.ui-datepicker-month,
-                .ui-datepicker select.ui-datepicker-year {
-                  color: black !important;
-                }
-  
-                /* 背景霧化 */
-                .AHC-Background-Blur {
-                  display: none;
-                  z-index: 500;
-                  height: 100%;
-                  position: fixed;
-                  right: 0;
-                  top: 0;
-                  background-color: #ced4da;
-                  opacity: 0.5;
-                }
-  
-                .AHC-Background-Blur-On {
-                  z-index: 502;
-                  display: block;
-                }
-  
-                /* 結果彈跳視窗 */
-                .AHC-Result-Window {
-                  display: none;
-                  z-index: 503;
-                  height: 100%;
-                  position: fixed;
-                  right: 0;
-                  top: 0;
-                  -webkit-align-items: center;
-                  align-items: center;
-                  -webkit-justify-content: center;
-                  justify-content: center;
-                }
-  
-                .AHC-Result-Window div.AHC-Result-Open {
-                  width: 500px;
-                  display: -webkit-flex;
-                  display: flex;
-                }
-  
-                .AHC-Result-Window div.AHC-Result-Open > div:nth-child(1) {
-                  width: 100%;
-                  position: relative;
-                  display: -webkit-flex;
-                  display: flex;
-                  -webkit-align-items: center;
-                  align-items: center;
-                  -webkit-justify-content: center;
-                  justify-content: center;
-                }
-  
-                .AHC-Result-Window
-                  div.AHC-Result-Open
-                  > div:nth-child(1)
-                  > div:nth-child(1) {
-                  width: 100%;
-                  max-height: calc(100vh - 100px);
-                  position: relative;
-                  border: 1px solid #008000;
-                  background-color: white;
-                  -webkit-border-radius: 10px;
-                  -moz-border-radius: 10px;
-                  border-radius: 10px;
-                  -webkit-box-shadow: 0px 0px 5px 1px #adb5bd;
-                  -moz-box-shadow: 0px 0px 5px 1px #adb5bd;
-                  box-shadow: 0px 0px 5px 1px #adb5bd;
-                  display: -webkit-flex;
-                  display: flex;
-                  -webkit-align-items: center;
-                  align-items: center;
-                  -webkit-flex-direction: column;
-                  flex-direction: column;
-                  -webkit-justify-content: center;
-                  justify-content: center;
-                }
-  
-                .AHC-Result-Window
-                  div.AHC-Result-Open
-                  > div:nth-child(1)
-                  > div:nth-child(1).Error-Result {
-                  border: 1px solid #c1121f;
-                }
-  
-                .AHC-Result-Window-On {
-                  display: -webkit-flex;
-                  display: flex;
-                }
-  
-                .AHC-Result-Window-On
-                  div.AHC-Result-Open
-                  > div:nth-child(1)
-                  > div:nth-child(1) {
-                  opacity: 0;
-                  -webkit-animation-name: AHC-Result-Window-On-Animation;
-                  -moz-animation-name: AHC-Result-Window-On-Animation;
-                  -o-animation-name: AHC-Result-Window-On-Animation;
-                  animation-name: AHC-Result-Window-On-Animation;
-                  -webkit-animation-delay: 0.8s;
-                  -moz-animation-delay: 0.8s;
-                  -o-animation-delay: 0.8s;
-                  animation-delay: 0.8s;
-                  -webkit-animation-duration: 0.5s;
-                  -moz-animation-duration: 0.5s;
-                  -o-animation-duration: 0.5s;
-                  animation-duration: 0.5s;
-                  -webkit-animation-fill-mode: forwards;
-                  -moz-animation-fill-mode: forwards;
-                  -o-animation-fill-mode: forwards;
-                  animation-fill-mode: forwards;
-                }
-  
-                @-webkit-keyframes AHC-Result-Window-On-Animation {
-                  to {
-                    opacity: 1;
-                  }
-                }
-  
-                @-moz-keyframes AHC-Result-Window-On-Animation {
-                  to {
-                    opacity: 1;
-                  }
-                }
-  
-                @-o-keyframes AHC-Result-Window-On-Animation {
-                  to {
-                    opacity: 1;
-                  }
-                }
-  
-                @keyframes AHC-Result-Window-On-Animation {
-                  to {
-                    opacity: 1;
-                  }
-                }
-  
-                .AHC-Result-Window-On
-                  div.AHC-Result-Open
-                  > div:nth-child(1)
-                  > div:nth-child(2) {
-                  width: 100%;
-                  height: 100%;
-                  position: absolute;
-                  left: 0;
-                  top: 0;
-                  display: -webkit-flex;
-                  display: flex;
-                  -webkit-align-items: center;
-                  align-items: center;
-                  -webkit-justify-content: center;
-                  justify-content: center;
-                  -webkit-animation-name: AHC-Result-Cover-Window-Animation;
-                  -moz-animation-name: AHC-Result-Cover-Window-Animation;
-                  -o-animation-name: AHC-Result-Cover-Window-Animation;
-                  animation-name: AHC-Result-Cover-Window-Animation;
-                  -webkit-animation-delay: 0.8s;
-                  -moz-animation-delay: 0.8s;
-                  -o-animation-delay: 0.8s;
-                  animation-delay: 0.8s;
-                  -webkit-animation-fill-mode: forwards;
-                  -moz-animation-fill-mode: forwards;
-                  -o-animation-fill-mode: forwards;
-                  animation-fill-mode: forwards;
-                }
-  
-                @-webkit-keyframes AHC-Result-Cover-Window-Animation {
-                  to {
-                    z-index: -1;
-                  }
-                }
-  
-                @-moz-keyframes AHC-Result-Cover-Window-Animation {
-                  to {
-                    z-index: -1;
-                  }
-                }
-  
-                @-o-keyframes AHC-Result-Cover-Window-Animation {
-                  to {
-                    z-index: -1;
-                  }
-                }
-  
-                @keyframes AHC-Result-Cover-Window-Animation {
-                  to {
-                    z-index: -1;
-                  }
-                }
-  
-                .AHC-Result-Window-On
-                  div.AHC-Result-Open
-                  > div:nth-child(1)
-                  > div:nth-child(2)
-                  > div:nth-child(1) {
-                  width: 100%;
-                  position: absolute;
-                  left: 0;
-                  background-color: white;
-                  -webkit-border-radius: 10px;
-                  -moz-border-radius: 10px;
-                  border-radius: 10px;
-                  -webkit-animation-name: AHC-Result-Cover-On-Window-Animation;
-                  -moz-animation-name: AHC-Result-Cover-On-Window-Animation;
-                  -o-animation-name: AHC-Result-Cover-On-Window-Animation;
-                  animation-name: AHC-Result-Cover-On-Window-Animation;
-                  -webkit-animation-duration: 0.8s;
-                  -moz-animation-duration: 0.8s;
-                  -o-animation-duration: 0.8s;
-                  animation-duration: 0.8s;
-                  -webkit-animation-fill-mode: forwards;
-                  -moz-animation-fill-mode: forwards;
-                  -o-animation-fill-mode: forwards;
-                  animation-fill-mode: forwards;
-                }
-  
-                @-webkit-keyframes AHC-Result-Cover-On-Window-Animation {
-                  0% {
-                    height: 0;
-                  }
-  
-                  50% {
-                    height: calc(100% + 40px);
-                  }
-  
-                  100% {
-                    height: 100%;
-                  }
-                }
-  
-                @-moz-keyframes AHC-Result-Cover-On-Window-Animation {
-                  0% {
-                    height: 0;
-                  }
-  
-                  50% {
-                    height: calc(100% + 40px);
-                  }
-  
-                  100% {
-                    height: 100%;
-                  }
-                }
-  
-                @-o-keyframes AHC-Result-Cover-On-Window-Animation {
-                  0% {
-                    height: 0;
-                  }
-  
-                  50% {
-                    height: calc(100% + 40px);
-                  }
-  
-                  100% {
-                    height: 100%;
-                  }
-                }
-  
-                @keyframes AHC-Result-Cover-On-Window-Animation {
-                  0% {
-                    height: 0;
-                  }
-  
-                  50% {
-                    height: calc(100% + 40px);
-                  }
-  
-                  100% {
-                    height: 100%;
-                  }
-                }
-  
-                /* 結果彈跳視窗圖示 */
-                .AHC-Result-Img {
-                  width: 100%;
-                  height: 100px;
-                  position: absolute;
-                  left: 0;
-                  top: -50px;
-                  display: -webkit-flex;
-                  display: flex;
-                  -webkit-align-items: center;
-                  align-items: center;
-                  -webkit-justify-content: center;
-                  justify-content: center;
-                }
-  
-                .AHC-Result-Img > div:nth-child(1) {
-                  width: 100px;
-                  height: 100px;
-                  background-color: #ebffeb;
-                  border: 2px solid #008000;
-                  -webkit-border-radius: 50%;
-                  -moz-border-radius: 50%;
-                  border-radius: 50%;
-                  -webkit-box-shadow: 0px 0px 5px 1px #adb5bd;
-                  -moz-box-shadow: 0px 0px 5px 1px #adb5bd;
-                  box-shadow: 0px 0px 5px 1px #adb5bd;
-                  display: -webkit-flex;
-                  display: flex;
-                  -webkit-align-items: center;
-                  align-items: center;
-                  -webkit-justify-content: center;
-                  justify-content: center;
-                }
-  
-                .AHC-Result-Error-Img > div:nth-child(1) {
-                  background-color: #fdeced;
-                  border: 2px solid #c1121f;
-                }
-  
-                .AHC-Result-Img > div:nth-child(1) img {
-                  width: 50px;
-                  height: 50px;
-                  background-repeat: no-repeat;
-                }
-  
-                /* 結果彈跳視窗標題 */
-                .AHC-Result-Title {
-                  padding-top: 90px;
-                  display: -webkit-flex;
-                  display: flex;
-                }
-  
-                .AHC-Result-Title span {
-                  color: #495057;
-                  font-size: 30pt;
-                }
-  
-                /* 結果彈跳視窗內容 */
-                .AHC-Result-Content {
-                  padding-top: 10px;
-                  display: -webkit-flex;
-                  display: flex;
-                }
-  
-                .AHC-Result-Content span {
-                  color: #008000;
-                  font-size: 18pt;
-                }
-  
-                .AHC-Result-Error-Content span {
-                  color: #c1121f;
-                }
-  
-                /* 結果彈跳視窗按鈕 */
-                .AHC-Result-Button {
-                  width: 90%;
-                  background-color: #008000;
-                  margin-top: 70px;
-                  margin-bottom: 20px;
-                  padding: 10px 0 10px 0;
-                  -webkit-border-radius: 5px;
-                  -moz-border-radius: 5px;
-                  border-radius: 5px;
-                  -webkit-box-shadow: 0px 0px 5px 1px #adb5bd;
-                  -moz-box-shadow: 0px 0px 5px 1px #adb5bd;
-                  box-shadow: 0px 0px 5px 1px #adb5bd;
-                  display: -webkit-flex;
-                  display: flex;
-                  -webkit-align-items: center;
-                  align-items: center;
-                  -webkit-justify-content: center;
-                  justify-content: center;
-                }
-  
-                .AHC-Result-Error-Button {
-                  background-color: #c1121f;
-                }
-  
-                .AHC-Result-Button:hover {
-                  cursor: pointer;
-                  -webkit-animation-name: AHC-Result-Button-Animation;
-                  -moz-animation-name: AHC-Result-Button-Animation;
-                  -o-animation-name: AHC-Result-Button-Animation;
-                  animation-name: AHC-Result-Button-Animation;
-                  -webkit-animation-duration: 0.3s;
-                  -moz-animation-duration: 0.3s;
-                  -o-animation-duration: 0.3s;
-                  animation-duration: 0.3s;
-                  -webkit-animation-fill-mode: forwards;
-                  -moz-animation-fill-mode: forwards;
-                  -o-animation-fill-mode: forwards;
-                  animation-fill-mode: forwards;
-                }
-  
-                @-webkit-keyframes AHC-Result-Button-Animation {
-                  to {
-                    opacity: 0.8;
-                  }
-                }
-  
-                @-moz-keyframes AHC-Result-Button-Animation {
-                  to {
-                    opacity: 0.8;
-                  }
-                }
-  
-                @-o-keyframes AHC-Result-Button-Animation {
-                  to {
-                    opacity: 0.8;
-                  }
-                }
-  
-                @keyframes AHC-Result-Button-Animation {
-                  to {
-                    opacity: 0.8;
-                  }
-                }
-  
-                .AHC-Result-Button span {
-                  color: #f8f9fa;
-                  font-size: 14pt;
-                }
-              </style>
-              <script>
-                function show_information(SNo) {
-                  document.getElementById("show_click").click();
-                  $(".modal-content").load();
-                }
-                function edit_new_record(SNo) {
-                  document.getElementById("edit_new_click").click();
-                  $(".modal-content").load();
-                }
-                function edit_record(SNo) {
-                  document.getElementById("edit_click").click();
-                  $(".modal-content").load();
-                }
-              </script>
+
+              <!-- 左上的標題 -->
               <div>
                 <h1 class="page-header">職員出勤管理</h1>
               </div>
               <input id="hfd_EmpSNo" type="hidden" value="100000020" />
+
               <!-- 切版開始 -->
               <div class="chit-chat-layer1">
                 <div class="col-md-12 chit-chat-layer1-left">
                   <div class="work-progres">
+
                     <!--背景霧化-->
                     <div
                       id="AHC_Background_Blur"
@@ -520,6 +58,8 @@
                     ></div>
                     <!--結果彈跳視窗-->
                     <div id="AHC_Result_Window" class="AHC-Result-Window"></div>
+
+                    <!-- 搜尋區塊 -->
                     <div class="panel-heading px-0">
                       <div class="row">
                         <div class="col-sm-8">
@@ -606,7 +146,11 @@
                         </div>
                       </div>
                     </div>
+
+                    <!-- 分線 -->
                     <hr class="mb-2" />
+
+                    <!-- 資料顯示位置 -->
                     <div class="panel-body" id="cla_data">
                       <div class="panel-body" id="cla_data">
                         <div class="row">
@@ -1392,10 +936,12 @@
               </div>
             </div>
           </div>
+
           <!-- 側邊選單-->
           <div class="sidebar-menu" style="word-break: break-all">
             <script src="./js/header.js"></script>
           </div>
+          
           <div class="clearfix"></div>
         </div>
       </form>
