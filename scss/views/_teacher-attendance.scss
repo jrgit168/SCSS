@@ -1,0 +1,115 @@
+.modal-header {
+  color: #ffffff;
+  font-size: 36px;
+}
+.section-shadow {
+  box-shadow: 2px 2px 4px 2px rgba(0, 0, 0, 0.2);
+}
+.border-1 {
+  border:1px solid #D9D9D9;
+}
+.border-danger-1 {
+  border:1px solid #D80505;
+}
+.rounded-4 {
+  border-radius: 4px;
+}
+
+.teacher-sign-img {
+  max-width: 80%;
+}
+.attendance-remark {
+  font-size: 14px;
+  text-align: left;
+}
+.jr-btn-prim-blue {
+  font-family: 'Microsoft JhengHei', sans-serif;
+    border: 2px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #FFFFFF;
+    text-align: center;
+    background-color: #4FBCFB;
+    padding-right: 15px !important;
+    padding-left: 15px !important;
+    cursor: pointer;
+    font-weight: bold;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    word-break: break-all;
+    display: inline-block;
+}
+.attendance-search-btn {
+  font-family: 'Microsoft JhengHei', sans-serif;
+  border: 2px;
+  width: 12%;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  font-size: 14px;
+  color: #FFFFFF;
+  text-align: center;
+  background-color: #68AE00;
+  padding-right: 24px !important;
+  padding-left: 24px !important;
+  cursor: pointer;
+  font-weight: bold;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  word-break: break-all;
+  display: inline-block;
+}
+.text-align-left {
+  text-align: left;
+}
+.attendance-remark-input {
+  width: 100%;
+}
+.fw-bold {
+  font-weight: bold;
+}
+.jr-btn-red {
+  font-family: 'Microsoft JhengHei', sans-serif;
+    border: 2px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #FFFFFF;
+    text-align: center;
+    background-color: #D80505;
+    padding-right: 15px !important;
+    padding-left: 15px !important;
+    cursor: pointer;
+    font-weight: bold;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    word-break: break-all;
+    display: inline-block;
+}
+.jr-btn-prim-green {
+  font-family: 'Microsoft JhengHei', sans-serif;
+    border: 2px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #FFFFFF;
+    text-align: center;
+    background-color: #68AE00;
+    padding-right: 15px !important;
+    padding-left: 15px !important;
+    cursor: pointer;
+    font-weight: bold;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    word-break: break-all;
+    display: inline-block;
+}
+.jr-btn-success {
+  
+  border-radius: 4px;
+  padding: 2px 12px;
+}

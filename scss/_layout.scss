@@ -1,3 +1,49 @@
-.layout{
-    color: pink;
-}
+// 導覽列
+.menu-selected {
+    background-color: #44aad4 !important;
+  }
+
+// 登入者資料
+.header-right {
+    float: right;
+    width: 520px;
+  }
+.popwd1 {
+    color: #333333;
+    font-size: 24px;
+    line-height: 40px;
+    margin-left: -40px;
+  }
+
+  .payment-sendbtns {
+    margin-top: 1em;
+    margin-right: 5em;
+    margin-bottom: 1em;
+    margin-left: 0;
+  }
+
+  .top_tooltip {
+    .tooltiptext {
+        visibility: hidden;
+        width: 120px;
+        background-color: black;
+        color: #fff;
+        text-align: center;
+        border-radius: 6px;
+        padding: 5px 0;
+        position: absolute;
+        z-index: 1;
+        top: 50px;
+        margin-left: -60px;
+      }
+    
+      &:hover{
+        .tooltiptext {
+            visibility: visible;
+          }
+      }
+  }
+
+  .menu-selected {
+    background-color: #44aad4 !important;
+  }

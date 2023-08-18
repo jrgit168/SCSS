@@ -4,6 +4,24 @@
 // CSS reset
 @import "reset";
 
+// ForNewJR_Functional > css
+@import "ForNewJR_Functional/css/bootstrap";
+@import "ForNewJR_Functional/css/style";
+@import "ForNewJR_Functional/css/font-awesome";
+@import "ForNewJR_Functional/css/add";
+@import "ForNewJR_Functional/css/hover";
+@import "ForNewJR_Functional/css/demo-page";
+
+// ForNewJR_Functional > css > JQueryUI
+@import "ForNewJR_Functional/css/JQueryUI/jquery-ui";
+
+// jr_CSS > css
+@import "jr_CSS/css/diolog";
+
+// jr_css
+@import "jr_css/jr-color";
+@import "jr_css/lay-out-plug-in";
+
 // 客製化全站設定
 @import "base";
 
@@ -12,3 +30,6 @@
 
 // 表頭與表尾
 @import "layout";
+
+// teacher-attendance
+@import "views/teacher-attendance";
