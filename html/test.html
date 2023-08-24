@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <title>職員出勤管理</title>
+    <!-- 所有 CSS 都統整在 SCSS-->
+    <link rel="stylesheet" href="../css/all.css">
+    <!-- 大部分 外掛 JS 都統整在 NewJR_Functional.js-->
+    <script src="../js/ForNewJR_Functional/NewJR_Functional.js"> </script>
+    <!-- Font Awesome-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+    <!-- bootstrap-icons-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <!-- sheetjs-->
+    <script src="https://cdn.sheetjs.com/xlsx-latest/package/dist/xlsx.full.min.js"> </script>
+    <!-- 彈窗 js-->
+    <script src="../js/Popup .js"> </script>
+  </head>
+  <body> 
+    <form action="./Student_LifeContact.aspx" method="post" id="aspnetForm">
+      <div class="page-container">
+        <div class="left-content">
+          <div class="mother-grid-inner">
+            <!-- 登入者個人資料-->
+            <div class="header-main">
+              <div class="header-right">
+                <ul class="nofitications-dropdown">
+                  <li class="dropdown head-dpdn"><a href="TeacherParent_manage.aspx"></a><a class="top_tooltip" href="OperateTeaching.aspx" style="cursor: pointer"><img src="../img/images/e-learning_1.png"><span class="tooltiptext">系統操作教學</span></a><a class="top_tooltip" onclick="go12345()" style="cursor: pointer"><img src="../img/images/linkicon-4.png"><span class="tooltiptext">系統公告</span></a><a class="top_tooltip" href="http://jrad.jretc.net/Login/Jretc2Kingway?schoolid=12&amp;amp;usersno=100000020" style="cursor: pointer"><img src="../img/images/linkicon-1.png"><span class="tooltiptext">教案平台</span></a><a class="top_tooltip" onclick="go12345('SXWiJo8E8gY5AvVTKZXDsQ==')" style="cursor: pointer"><img src="../img/images/linkicon-7.png"><span class="tooltiptext">存預存款</span></a><a class="top_tooltip" href="http://www.jerri.online/OnlineEnroll?schoolid=12" style="cursor: pointer"><img src="../img/images/OnlineEnroll.png" style="width: 35px; height: 25px"><span class="tooltiptext">線上報名</span></a></li>
+                </ul>
+                <div class="profile_details">
+                  <ul> 
+                    <li class="dropdown profile_details_drop"><a class="dropdown-toggle" href="#" data-toggle="dropdown" aria-expanded="false">
+                        <div class="profile_img">
+                          <div class="user-name">
+                            <p>張二峰 老師</p>
+                          </div><i class="fa fa-angle-down lnr"></i><i class="fa fa-angle-up lnr"></i>
+                          <div class="clearfix"></div>
+                        </div></a>
+                      <ul class="dropdown-menu drp-mnu">
+                        <li> <a href="chg_pwd.aspx"><i class="fa fa-key">變更密碼</i></a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="popup"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </body>
+</html>

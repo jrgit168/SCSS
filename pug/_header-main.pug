@@ -1,0 +1,35 @@
+.header-main
+    .header-right
+        ul.nofitications-dropdown
+            li.dropdown.head-dpdn
+                a(href="TeacherParent_manage.aspx")
+                a(href="OperateTeaching.aspx", style="cursor: pointer").top_tooltip
+                    img(src="../img/images/e-learning_1.png")
+                    span.tooltiptext 系統操作教學
+                a(onclick="go12345()", style="cursor: pointer").top_tooltip
+                    img(src="../img/images/linkicon-4.png")
+                    span.tooltiptext 系統公告
+                a(href="http://jrad.jretc.net/Login/Jretc2Kingway?schoolid=12&amp;usersno=100000020", style="cursor: pointer").top_tooltip
+                    img(src="../img/images/linkicon-1.png")
+                    span.tooltiptext 教案平台
+                a(onclick="go12345('SXWiJo8E8gY5AvVTKZXDsQ==')", style="cursor: pointer").top_tooltip
+                    img(src="../img/images/linkicon-7.png")
+                    span.tooltiptext 存預存款
+                a(href="http://www.jerri.online/OnlineEnroll?schoolid=12", style="cursor: pointer").top_tooltip
+                    img(src="../img/images/OnlineEnroll.png", style="width: 35px; height: 25px")
+                    span.tooltiptext 線上報名
+        .profile_details
+            ul 
+                li.dropdown.profile_details_drop
+                    a(href="#", data-toggle="dropdown", aria-expanded="false").dropdown-toggle
+                        .profile_img
+                            .user-name
+                                p 張二峰 老師
+                            i.fa.fa-angle-down.lnr
+                            i.fa.fa-angle-up.lnr
+                            .clearfix
+                    ul.dropdown-menu.drp-mnu
+                        li 
+                            a(href="chg_pwd.aspx")
+                                i.fa.fa-key 變更密碼
+    .popup
